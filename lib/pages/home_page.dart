@@ -56,13 +56,16 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Column(
               children: [
+                //? this upper part is everything in the home above the tabs(categories, ...)
                 HomeUpperPart(),
+                //? this contains the tabs (categories)
                 Expanded(
                   child: HomeDownPart(),
                 ),
               ],
             ),
           ),
+          //? this is the nav bar of the app itself (home, support...)
           AppNavBarWidget(),
         ],
       ),

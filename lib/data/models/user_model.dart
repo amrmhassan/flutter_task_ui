@@ -16,6 +16,7 @@ class UserModel {
     required this.email,
   });
 
+//? these are the json serlization methods(to convert json objects from the api response into dart models)
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
