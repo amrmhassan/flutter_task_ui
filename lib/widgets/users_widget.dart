@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:shared_code/shared_code.dart';
-import 'package:ui_task/constants/constants.dart';
 import 'package:ui_task/data/datasources/users_datasource.dart';
 import 'package:ui_task/data/models/user_model.dart';
 import 'package:reaya_shared_code/utils/global_utils.dart';
@@ -60,9 +59,9 @@ class _UsersWidgetState extends State<UsersWidget> {
             vertical: kVPad / 2,
             horizontal: kVPad / 2,
           ),
-          itemCount: CategoriesList.models.length,
+          itemCount: users.length,
           itemBuilder: (context, index) {
-            var model = CategoriesList.models[index];
+            var model = users[index];
             return Container(
               padding: EdgeInsets.symmetric(
                 horizontal: kHPad / 2,
@@ -84,13 +83,10 @@ class _UsersWidgetState extends State<UsersWidget> {
                 children: [
                   Row(
                     children: [
-                      Image.asset(
-                        'assets/categories/${model.iconName}.png',
-                        width: largeIconSize,
-                      ),
+                      Text('${model.id}.'),
                       HSpace(factor: .5),
                       Text(
-                        model.title,
+                        model.name,
                         style: h3TextStyle.copyWith(),
                       ),
                       Spacer(),
