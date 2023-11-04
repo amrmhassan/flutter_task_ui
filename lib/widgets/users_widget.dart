@@ -23,6 +23,7 @@ class _UsersWidgetState extends State<UsersWidget> {
   void loadUsers() async {
     try {
       loading = true;
+      setState(() {});
       users = await _datasource.getUsers();
       setState(() {});
     } catch (e) {
@@ -30,6 +31,14 @@ class _UsersWidgetState extends State<UsersWidget> {
     }
     loading = false;
     setState(() {});
+  }
+
+  @override
+  void initState() {
+    Future.delayed(Duration.zero).then((value) {
+      loadUsers();
+    });
+    super.initState();
   }
 
   @override
