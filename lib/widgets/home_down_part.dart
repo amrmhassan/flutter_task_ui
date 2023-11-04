@@ -147,16 +147,32 @@ class CategoriesWidget extends StatelessWidget {
         VSpace(factor: .5),
         Expanded(
             child: ListView.builder(
+          padding: EdgeInsets.symmetric(
+            vertical: kVPad / 2,
+            horizontal: kVPad / 2,
+          ),
           itemCount: CategoriesList.models.length,
           itemBuilder: (context, index) {
             var model = CategoriesList.models[index];
-            return PaddingWrapper(
-              padding: EdgeInsets.symmetric(horizontal: kHPad / 2),
+            return Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: kHPad / 2,
+                vertical: kVPad / 3,
+              ),
+              margin: EdgeInsets.only(bottom: kVPad / 2),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(mediumBorderRadius),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(1, 2),
+                    color: Colors.grey.withOpacity(.1),
+                    blurRadius: 2,
+                  ),
+                ],
+              ),
               child: Column(
                 children: [
-                  VSpace(
-                    factor: .5,
-                  ),
                   Row(
                     children: [
                       Image.asset(
@@ -178,11 +194,6 @@ class CategoriesWidget extends StatelessWidget {
                       )
                     ],
                   ),
-                  VSpace(factor: .25),
-                  HLine(
-                    thickness: .8,
-                    color: AppColors.inactiveColor,
-                  )
                 ],
               ),
             );
