@@ -356,7 +356,7 @@ packages:
     dependency: "direct dev"
     description:
       path: "."
-      ref: main
+      ref: HEAD
       resolved-ref: "1dcb7d39fdd127c144bedd90f8b82cc16f642839"
       url: "https://github.com/amrmhassan/shiaka_shared_code.git"
     source: git
