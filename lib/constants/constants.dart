@@ -2,6 +2,7 @@ import 'package:ui_task/models/category_model.dart';
 
 class Constants {
   static const int orders = 0;
+  static const String apiLink = 'https://jsonplaceholder.typicode.com/users';
 }
 
 class CategoriesList {
