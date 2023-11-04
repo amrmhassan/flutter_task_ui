@@ -9,23 +9,25 @@ class NoServices extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const VSpace(),
-        Image.asset(
-          'assets/icons/empty.png',
-          width: Responsive.getWidth(context) * .6,
-        ),
-        const VSpace(factor: .2),
-        Text(
-          'No services found',
-          style: h2TextStyle,
-        ),
-        Text(
-          'there is no services yet!',
-          style: h4TextStyleInactive,
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const VSpace(),
+          Image.asset(
+            'assets/icons/empty.png',
+            width: Responsive.getWidth(context) * .6,
+          ),
+          const VSpace(factor: .2),
+          Text(
+            'No services found',
+            style: h2TextStyle,
+          ),
+          Text(
+            'there is no services yet!',
+            style: h4TextStyleInactive,
+          ),
+        ],
+      ),
     );
   }
 }

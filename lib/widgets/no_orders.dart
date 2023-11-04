@@ -9,23 +9,25 @@ class NoOrders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const VSpace(),
-        Image.asset(
-          'assets/icons/empty.png',
-          width: Responsive.getWidth(context) * .6,
-        ),
-        const VSpace(factor: .2),
-        Text(
-          'No orders found',
-          style: h2TextStyle,
-        ),
-        Text(
-          'you can place your needed orders to let serve you',
-          style: h4TextStyleInactive,
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const VSpace(),
+          Image.asset(
+            'assets/icons/empty.png',
+            width: Responsive.getWidth(context) * .6,
+          ),
+          const VSpace(factor: .2),
+          Text(
+            'No orders found',
+            style: h2TextStyle,
+          ),
+          Text(
+            'you can place your needed orders to let serve you',
+            style: h4TextStyleInactive,
+          ),
+        ],
+      ),
     );
   }
 }
