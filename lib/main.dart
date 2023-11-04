@@ -5,6 +5,8 @@ import 'package:ui_task/constants/colors.dart';
 import 'package:ui_task/pages/home_page.dart';
 import 'package:shared_code/shared_code.dart';
 
+// dart run build_runner build --delete-conflicting-outputs
+
 void main() {
   runApp(const MyApp());
 }
