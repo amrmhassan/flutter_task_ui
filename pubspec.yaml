@@ -20,6 +20,7 @@ dependencies:
     git: 
       url: https://github.com/amrmhassan/reaya_shared_code.git
       ref: main
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

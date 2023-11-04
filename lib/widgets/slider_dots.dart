@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:ui_task/widgets/dot.dart';
 import 'package:shared_code/shared_code.dart';
@@ -14,8 +12,8 @@ class SliderDots extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Dot(),
-        HSpace(factor: .5),
+        const Dot(),
+        const HSpace(factor: .5),
         Container(
           width: largeIconSize,
           height: dotRadius,
@@ -24,8 +22,8 @@ class SliderDots extends StatelessWidget {
             color: Theme.of(context).primaryColor,
           ),
         ),
-        HSpace(factor: .5),
-        Dot(),
+        const HSpace(factor: .5),
+        const Dot(),
       ],
     );
   }

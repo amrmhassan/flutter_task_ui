@@ -11,12 +11,12 @@ class NoOrders extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        VSpace(),
+        const VSpace(),
         Image.asset(
           'assets/icons/empty.png',
           width: Responsive.getWidth(context) * .6,
         ),
-        VSpace(factor: .2),
+        const VSpace(factor: .2),
         Text(
           'No orders found',
           style: h2TextStyle,

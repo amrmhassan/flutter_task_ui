@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:shared_code/shared_code.dart';
 import 'package:ui_task/constants/colors.dart';
@@ -22,7 +20,7 @@ class _HomeDownPartState extends State<HomeDownPart> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: kHPad / 2,
         vertical: kVPad * .5,
       ),
@@ -30,7 +28,7 @@ class _HomeDownPartState extends State<HomeDownPart> {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: kHPad / 2,
               vertical: kVPad / 2,
             ),
@@ -53,10 +51,10 @@ class _HomeDownPartState extends State<HomeDownPart> {
           ),
           Expanded(
             child: activeItem == HomeNavBarItem.users
-                ? UsersWidget()
+                ? const UsersWidget()
                 : activeItem == HomeNavBarItem.orders
-                    ? NoOrders()
-                    : NoServices(),
+                    ? const NoOrders()
+                    : const NoServices(),
           ),
         ],
       ),

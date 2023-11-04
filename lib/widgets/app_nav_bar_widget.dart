@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:shared_code/shared_code.dart';
 import 'package:ui_task/extensions/string_extensions.dart';
@@ -32,12 +30,12 @@ class AppNavBarWidget extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
             color: Colors.grey.withOpacity(.2),
             blurRadius: 10,
           ),
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(
             mediumBorderRadius,
           ),

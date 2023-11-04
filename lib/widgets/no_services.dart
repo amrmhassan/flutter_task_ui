@@ -11,12 +11,12 @@ class NoServices extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        VSpace(),
+        const VSpace(),
         Image.asset(
           'assets/icons/empty.png',
           width: Responsive.getWidth(context) * .6,
         ),
-        VSpace(factor: .2),
+        const VSpace(factor: .2),
         Text(
           'No services found',
           style: h2TextStyle,

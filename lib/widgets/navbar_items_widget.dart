@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:shared_code/shared_code.dart';
 import 'package:ui_task/constants/colors.dart';
@@ -23,10 +21,10 @@ class NavBarItemsWidget extends StatelessWidget {
         ...HomeNavBarItem.values.map(
           (e) => Expanded(
             child: MainButton(
-              padding: EdgeInsets.symmetric(vertical: kVPad / 3),
+              padding: const EdgeInsets.symmetric(vertical: kVPad / 3),
               margin: e == HomeNavBarItem.orders
                   ? EdgeInsets.zero
-                  : EdgeInsets.only(right: kHPad / 4),
+                  : const EdgeInsets.only(right: kHPad / 4),
               onTap: () {
                 setActiveItem(e);
               },

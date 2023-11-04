@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:ui_task/widgets/app_nav_bar_widget.dart';
 import 'package:ui_task/widgets/home_down_part.dart';
@@ -18,6 +16,8 @@ enum AppNavBarItem {
   profile,
 }
 
+GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -29,6 +29,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+      drawer: const Drawer(
+        child: Center(child: Text('Drawer Content')),
+      ),
       extendBody: false,
       extendBodyBehindAppBar: false,
       appBar: AppBar(
@@ -37,15 +41,17 @@ class _HomePageState extends State<HomePage> {
         shadowColor: Colors.white,
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: Text('Home'),
+        title: const Text('Home'),
         leading: IconButton(
-          onPressed: () {},
-          icon: Icon(
+          onPressed: () {
+            scaffoldKey.currentState?.openDrawer();
+          },
+          icon: const Icon(
             Icons.menu,
           ),
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
           Expanded(
             child: Column(
