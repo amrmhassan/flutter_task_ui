@@ -8,8 +8,8 @@ import 'package:ui_task/extensions/string_extensions.dart';
 import 'package:ui_task/pages/home_page.dart';
 
 class NavBarItemsWidget extends StatelessWidget {
-  final NavBarItem activeItem;
-  final Function(NavBarItem item) setActiveItem;
+  final HomeNavBarItem activeItem;
+  final Function(HomeNavBarItem item) setActiveItem;
   const NavBarItemsWidget({
     super.key,
     required this.activeItem,
@@ -20,11 +20,11 @@ class NavBarItemsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        ...NavBarItem.values.map(
+        ...HomeNavBarItem.values.map(
           (e) => Expanded(
             child: MainButton(
               padding: EdgeInsets.symmetric(vertical: kVPad / 3),
-              margin: e == NavBarItem.orders
+              margin: e == HomeNavBarItem.orders
                   ? EdgeInsets.zero
                   : EdgeInsets.only(right: kHPad / 4),
               onTap: () {
@@ -34,10 +34,10 @@ class NavBarItemsWidget extends StatelessWidget {
                 color: e == activeItem ? Colors.white : Colors.black,
                 fontWeight: e == activeItem ? FontWeight.normal : null,
               ),
-              title: e == NavBarItem.orders
+              title: e == HomeNavBarItem.orders
                   ? '${e.name.capitalize} (${Constants.orders})'
                   : e.name.capitalize,
-              backgroundColor: e == NavBarItem.orders && e != activeItem
+              backgroundColor: e == HomeNavBarItem.orders && e != activeItem
                   ? AppColors.inactiveColor.withOpacity(.5)
                   : e == activeItem
                       ? Theme.of(context).primaryColor
