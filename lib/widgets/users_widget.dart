@@ -54,56 +54,59 @@ class _UsersWidgetState extends State<UsersWidget> {
         ),
         VSpace(factor: .5),
         Expanded(
-            child: ListView.builder(
-          padding: EdgeInsets.symmetric(
-            vertical: kVPad / 2,
-            horizontal: kVPad / 2,
-          ),
-          itemCount: users.length,
-          itemBuilder: (context, index) {
-            var model = users[index];
-            return Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: kHPad / 2,
-                vertical: kVPad / 3,
-              ),
-              margin: EdgeInsets.only(bottom: kVPad / 2),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(mediumBorderRadius),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(1, 2),
-                    color: Colors.grey.withOpacity(.1),
-                    blurRadius: 2,
+          child: loading
+              ? Center(child: CircularProgressIndicator())
+              : ListView.builder(
+                  padding: EdgeInsets.symmetric(
+                    vertical: kVPad / 2,
+                    horizontal: kVPad / 2,
                   ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text('${model.id}.'),
-                      HSpace(factor: .5),
-                      Text(
-                        model.name,
-                        style: h3TextStyle.copyWith(),
+                  itemCount: users.length,
+                  itemBuilder: (context, index) {
+                    var model = users[index];
+                    return Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: kHPad / 2,
+                        vertical: kVPad / 3,
                       ),
-                      Spacer(),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward,
-                          color: Colors.grey,
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            );
-          },
-        ))
+                      margin: EdgeInsets.only(bottom: kVPad / 2),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(mediumBorderRadius),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(1, 2),
+                            color: Colors.grey.withOpacity(.1),
+                            blurRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text('${model.id}.'),
+                              HSpace(factor: .5),
+                              Text(
+                                model.name,
+                                style: h3TextStyle.copyWith(),
+                              ),
+                              Spacer(),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.grey,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+        ),
       ],
     );
   }
