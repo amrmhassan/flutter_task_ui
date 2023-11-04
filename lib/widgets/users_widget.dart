@@ -1,8 +1,12 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:shared_code/shared_code.dart';
+import 'package:ui_task/constants/colors.dart';
 import 'package:ui_task/data/datasources/users_datasource.dart';
 import 'package:ui_task/data/models/user_model.dart';
 import 'package:reaya_shared_code/utils/global_utils.dart';
+import 'package:ui_task/widgets/shimmer_widget.dart';
 
 class UsersWidget extends StatefulWidget {
   const UsersWidget({
@@ -62,7 +66,7 @@ class _UsersWidgetState extends State<UsersWidget> {
         const VSpace(factor: .5),
         Expanded(
           child: loading
-              ? const Center(child: CircularProgressIndicator())
+              ? const LoadingUsers()
               : ListView.builder(
                   padding: const EdgeInsets.symmetric(
                     vertical: kVPad / 2,
@@ -113,6 +117,73 @@ class _UsersWidgetState extends State<UsersWidget> {
                     );
                   },
                 ),
+        ),
+      ],
+    );
+  }
+}
+
+class LoadingUsers extends StatelessWidget {
+  const LoadingUsers({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      physics: NeverScrollableScrollPhysics(),
+      children: [
+        LoadingUserShimmerWidget(),
+        VSpace(),
+        LoadingUserShimmerWidget(),
+        VSpace(),
+        LoadingUserShimmerWidget(),
+        VSpace(),
+        LoadingUserShimmerWidget(),
+        VSpace(),
+        LoadingUserShimmerWidget(),
+        VSpace(),
+        LoadingUserShimmerWidget(),
+        VSpace(),
+        LoadingUserShimmerWidget(),
+        VSpace(),
+        LoadingUserShimmerWidget(),
+        VSpace(),
+      ],
+    );
+  }
+}
+
+class LoadingUserShimmerWidget extends StatelessWidget {
+  const LoadingUserShimmerWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        ShimmerWidget(
+          width: largeIconSize,
+          height: largeIconSize,
+          borderRadius: mediumBorderRadius,
+          highlightColor: Color.fromARGB(255, 247, 221, 221),
+          baseColor: AppColors.cardBackground,
+        ),
+        HSpace(),
+        ShimmerWidget(
+          baseColor: AppColors.cardBackground,
+          width: largeIconSize * 3,
+          height: largeIconSize / 2,
+          borderRadius: mediumBorderRadius,
+          highlightColor: Color.fromARGB(255, 247, 221, 221),
+        ),
+        Spacer(),
+        ShimmerWidget(
+          width: largeIconSize,
+          height: largeIconSize,
+          borderRadius: 1000,
+          highlightColor: Color.fromARGB(255, 247, 221, 221),
+          baseColor: AppColors.cardBackground,
         ),
       ],
     );
