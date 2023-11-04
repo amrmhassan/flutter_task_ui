@@ -4,7 +4,7 @@ import 'package:ui_task/widgets/home_down_part.dart';
 import 'package:ui_task/widgets/home_upper_part.dart';
 
 enum HomeNavBarItem {
-  categories,
+  users,
   services,
   orders,
 }

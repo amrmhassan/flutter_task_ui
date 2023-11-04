@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shared_code/shared_code.dart';
 import 'package:ui_task/constants/colors.dart';
 import 'package:ui_task/pages/home_page.dart';
-import 'package:ui_task/widgets/categories_widget.dart';
 import 'package:ui_task/widgets/navbar_items_widget.dart';
 import 'package:ui_task/widgets/no_orders.dart';
 import 'package:ui_task/widgets/no_services.dart';
+import 'package:ui_task/widgets/users_widget.dart';
 
 class HomeDownPart extends StatefulWidget {
   const HomeDownPart({super.key});
@@ -15,7 +15,7 @@ class HomeDownPart extends StatefulWidget {
 }
 
 class _HomeDownPartState extends State<HomeDownPart> {
-  HomeNavBarItem activeItem = HomeNavBarItem.categories;
+  HomeNavBarItem activeItem = HomeNavBarItem.users;
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +50,8 @@ class _HomeDownPartState extends State<HomeDownPart> {
             ),
           ),
           Expanded(
-            child: activeItem == HomeNavBarItem.categories
-                ? const CategoriesWidget()
+            child: activeItem == HomeNavBarItem.users
+                ? const UsersWidget()
                 : activeItem == HomeNavBarItem.orders
                     ? const NoOrders()
                     : const NoServices(),
